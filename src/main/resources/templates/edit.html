@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Edit Author</title>
+</head>
+<body>
+
+<form id="edit-form" th:action="@{/api/authors}" th:object="${author}" th:method="put" action="edit.html">
+    <h1>author Info:</h1>
+
+    <div class="row">
+        <label for="id-input">ID:</label>
+        <input id="id-input" name="id" type="text" readonly="readonly" th:value="${author.id}" value="11"/>
+    </div>
+
+    <div class="row">
+        <label for="firstName-input">First name:</label>
+        <input id="firstName-input" name="firstName" type="text" th:value="${author.firstName}" value="Vasiliy"/>
+    </div>
+    <div class="row">
+        <label for="lastName-input">Last name:</label>
+        <input id="lastName-input" name="lastName" type="text" th:value="${author.lastName}" value="Terkin"/>
+    </div>
+
+    <div class="row">
+        <button type="submit">Update</button>
+        <a th:href="@{/list/authors}" href="list.html">Cancel</a>
+    </div>
+</form>
+
+</body>
+</html>

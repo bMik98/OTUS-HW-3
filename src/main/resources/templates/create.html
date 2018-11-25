@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Create Author</title>
+</head>
+<body>
+
+<form id="create-form" th:action="@{/api/authors}" th:object="${author}" th:method="post" action="create.html">
+    <h1>New author</h1>
+
+    <div class="row">
+        <label for="firstName-input">First name:</label>
+        <input id="firstName-input" name="firstName" type="text" th:value="${author.firstName}" value="Vasiliy"/>
+    </div>
+    <div class="row">
+        <label for="lastName-input">Last name:</label>
+        <input id="lastName-input" name="lastName" type="text" th:value="${author.lastName}" value="Terkin"/>
+    </div>
+
+    <div class="row">
+        <button type="submit">Save</button>
+        <a th:href="@{/list/authors}" href="list.html">Cancel</a>
+    </div>
+</form>
+
+</body>
+</html>
